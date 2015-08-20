@@ -147,7 +147,7 @@ module Fontcustom
   font-family: "#{font_name}";
   src: url("data:application/x-font-woff;charset=utf-8;base64,#{woff_base64}") format("woff"),
        #{url}("#{path}.ttf") format("truetype"),
-       #{url}("#{path}.svg##{font_name}") format("svg");
+       url("data:image/svg+xml;base64,#{woff_base64}") format("svg");
   font-weight: normal;
   font-style: normal;
 }|
