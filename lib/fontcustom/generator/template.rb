@@ -117,7 +117,7 @@ module Fontcustom
       def font_face(style = {})
         if style.is_a?(Symbol)
           if style == :preprocessor
-            url = "font-url"
+            url = "data-url"
             path = @font_path_alt
           elsif style == :preview
             url = "url"
@@ -128,7 +128,7 @@ module Fontcustom
           end
           say_message :warn, "`font_face(:#{style})` is deprecated. Use `font_face(url:'url', path:'path')` instead."
         else
-          style = {:url => "url", :path => @font_path}.merge(style)
+          style = {:url => "asset-url", :path => @font_path}.merge(style)
           url = style[:url]
           path = style[:path]
         end
